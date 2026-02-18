@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa del Tiempo</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <div id="map" style="height: 400px; width: 100%;"></div>
+
+
+    <div class="container">
+
+        <div id="dashboard" class="card">
+            <h2 id="ciudad">Cargando ciudad...</h2>
+            <div id="icono-clima">☀️</div>
+
+            <div class="grid-clima">
+                <div class="dato">
+                    <strong>Temperatura</strong>
+                    <span id="caja-temperatura" class="valor">--</span>
+                </div>
+                <div class="dato">
+                    <strong>Humedad</strong>
+                    <span class="valor"><span id="humedad">--</span>%</span>
+                </div>
+                <div class="dato">
+                    <strong>Presión</strong>
+                    <span class="valor"><span id="presion">--</span> hPa</span>
+                </div>
+                <div class="dato">
+                    <strong>Precipitación</strong>
+                    <span class="valor"><span id="precipitacion">--</span> mm</span>
+                </div>
+                <div class="dato full-width">
+                    <strong>Viento</strong>
+                    <span class="valor">
+                        <span id="viento">--</span> km/h
+                        (Dirección: <span id="viento-dir">--</span>°)
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card chart-container">
+            <h3>Pronóstico de 5 días (cada 3 horas)</h3>
+            <canvas id="miGrafica"></canvas>
+        </div>
+    </div>
+
+</body>
+
+</html>
